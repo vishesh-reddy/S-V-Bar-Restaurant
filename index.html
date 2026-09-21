@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome - SV Restaurant & Bar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="welcome-page">
+
+  <div class="welcome-container">
+
+    <!-- 1. Welcome Text -->
+    <h1 class="welcome-title">Welcome to S V Restaurant & Bar</h1>
+
+    <!-- 2. Building Image -->
+    <img src="images/building-welcome.jpg" alt="SV Bar & Restaurant" class="welcome-image">
+
+    <!-- 3. Choose Option Text -->
+    <h2 class="choose-text">Choose your option</h2>
+
+    <!-- 3. Menu Buttons -->
+<div class="menu-buttons">
+
+  <a href="food.html" class="menu-img-btn">
+    <img src="images/food-button.jpg" alt="Food Menu">
+    <span>FOOD MENU</span>
+  </a>
+
+  <a href="drinks.html" class="menu-img-btn">
+    <img src="images/liquor-button.jpg" alt="Liquor Menu">
+    <span>LIQUOR MENU</span>
+  </a>
+
+</div>
+<!-- 4. Restaurant Gallery Slider -->
+<div class="restaurant-gallery">
+  <h2 class="gallery-title">Our Ambience</h2>
+
+  <div class="slider" id="ambienceSlider">
+    <div class="slides">
+
+      <div class="slide"><img src="images/ambience3.jpg" alt="Ambience 3"></div>
+      <div class="slide"><img src="images/ambience5.jpg" alt="Ambience 1"></div>
+      <div class="slide"><img src="images/ambience1.jpg" alt="Ambience 1"></div>
+      <div class="slide"><img src="images/ambience2.jpg" alt="Ambience 2"></div>
+      <div class="slide"><img src="images/ambience4.jpg" alt="Ambience 4"></div>
+    </div>
+
+    <div class="dots" id="ambienceDots"></div>
+  </div>
+</div>
+<!-- ===== RESTAURANT DETAILS SECTION ===== -->
+<div class="restaurant-details">
+
+  <div class="details-top">
+    <span class="tag">Indoor Seating | Takeaway</span>
+  </div>
+
+  <h2 class="section-title">Average Cost</h2>
+  <p class="average-cost">INR 1200 for two people (approx)</p>
+
+  <h2 class="section-title">OPENING HOURS</h2>
+  <p class="hours">
+    Monday - Sunday : 11:00 AM - 11:00 PM
+  </p>
+
+  <h2 class="section-title">Contact Us</h2>
+
+  <div class="contact-item">
+    <span></span>
+    <p>📱 - +91 9398734112</p>
+  </div>
+
+  <div class="contact-item">
+    <span></span>
+    <p>📍 - Pothireddypalli X Road,Sangareddy,502001,Telangana</p>
+  </div>
+
+  <div class="copyright">
+    © 2026 SV Bar & Restaurant. All Rights Reserved.
+  </div>
+
+</div>
+  </div>
+<script>
+  (function(){
+    const slider = document.getElementById("ambienceSlider");
+    const slides = slider.querySelector(".slides");
+    const slideCount = slides.children.length;
+    const dotsWrap = document.getElementById("ambienceDots");
+
+    let index = 0;
+    let startX = 0;
+    let currentX = 0;
+    let dragging = false;
+
+    // Create dots
+    const dots = [];
+    for(let i=0;i<slideCount;i++){
+      const b = document.createElement("button");
+      b.setAttribute("aria-label", "Go to slide " + (i+1));
+      b.addEventListener("click", ()=>goTo(i));
+      dotsWrap.appendChild(b);
+      dots.push(b);
+    }
+
+    function updateDots(){
+      dots.forEach((d,i)=>d.classList.toggle("active", i===index));
+    }
+
+    function goTo(i){
+      index = Math.max(0, Math.min(slideCount-1, i));
+      slides.style.transform = `translateX(${-index * 100}%)`;
+      updateDots();
+    }
+
+    // Swipe / drag
+    function onStart(x){
+      dragging = true;
+      startX = x;
+      currentX = x;
+      slides.style.transition = "none";
+    }
+
+    function onMove(x){
+      if(!dragging) return;
+      currentX = x;
+      const dx = currentX - startX;
+      slides.style.transform = `translateX(calc(${-index * 100}% + ${dx}px))`;
+    }
+
+    function onEnd(){
+      if(!dragging) return;
+      dragging = false;
+      slides.style.transition = "transform 0.35s ease";
+      const dx = currentX - startX;
+      const threshold = 60; // swipe sensitivity
+      if(dx < -threshold && index < slideCount-1) index++;
+      if(dx > threshold && index > 0) index--;
+      goTo(index);
+    }
+
+    // Touch events
+    slider.addEventListener("touchstart", (e)=>onStart(e.touches[0].clientX), {passive:true});
+    slider.addEventListener("touchmove", (e)=>onMove(e.touches[0].clientX), {passive:true});
+    slider.addEventListener("touchend", onEnd);
+
+    // Mouse drag events
+    slider.addEventListener("mousedown", (e)=>{ e.preventDefault(); onStart(e.clientX); });
+    window.addEventListener("mousemove", (e)=>onMove(e.clientX));
+    window.addEventListener("mouseup", onEnd);
+
+    // init
+    goTo(0);
+  })();
+</script>
+</body>
+</html>

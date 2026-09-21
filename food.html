@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="menu" id="top">
+  <h1>Food Menu</h1>
+
+  <!-- Top Navigation -->
+  <div class="top-nav">
+
+    <a href="javascript:void(0)" class="image-btn" onclick="showSection('startersSection', this)">
+      <img src="images/starters.jpg" alt="Starters">
+      <span>Starters</span>
+    </a>
+
+    <a href="javascript:void(0)" class="image-btn" onclick="showSection('maincourseSection', this)">
+      <img src="images/maincourse.jpg" alt="Main Course">
+      <span>Main Course</span>
+    </a>
+
+    <a href="javascript:void(0)" class="image-btn" onclick="showSection('indianbreadSection', this)">
+      <img src="images/indianbread.jpg" alt="Indian Bread">
+      <span>Indian Bread</span>
+    </a>
+
+    <a href="javascript:void(0)" class="image-btn" onclick="showSection('raithaSection', this)">
+      <img src="images/raitha.jpg" alt="Raita">
+      <span>Raita</span>
+    </a>
+
+    <a href="javascript:void(0)" class="image-btn" onclick="showSection('cooldrinksSection', this)">
+      <img src="images/cooldrinks.jpg" alt="Cool Drinks">
+      <span>Cool Drinks</span>
+    </a>
+
+  </div>
+
+  <!-- Starters Section -->
+  <div class="menu-section" id="startersSection">
+    <h2 id="starters">STARTERS</h2>
+
+    <div class="category-buttons">
+      <div class="veg-nonveg">
+        <button onclick="showStartersVeg()">🟢 VEG</button>
+        <button onclick="showStartersNonVeg()">🔴 NON-VEG</button>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column" id="startersVeg">
+        <h3>VEG STARTERS</h3>
+        <ul class="food-list">
+          <li><span>GREEN SALAD</span> <span>60</span></li>
+          <li><span>VEG GOLD COIN</span> <span>185</span></li>
+          <li><span>PANNEER 65</span> <span>195</span></li>
+          <li><span>PANNEER TIKKA</span> <span>225</span></li>
+          <li><span>PEPPER PANNEER</span> <span>205</span></li>
+          <li><span>CORN CRISPY</span> <span>150</span></li>
+          <li><span>BOILED CORN</span> <span>115</span></li>
+          <li><span>BOILED PEANUTS</span> <span>110</span></li>
+          <li><span>MASALA PEANUTS</span> <span>110</span></li>
+          <li><span>GREEN PEAS ROAST</span> <span>110</span></li>
+          <li><span>GREEN PEAS FRY</span> <span>110</span></li>
+          <li><span>CHANA ROAST</span> <span>105</span></li>
+          <li><span>CHANA FRY</span> <span>105</span></li>
+          <li><span>VEG MANCHURIAN</span> <span>155</span></li>
+          <li><span>VEG 65</span> <span>145</span></li>
+          <li><span>GOBI 65</span> <span>145</span></li>
+          <li><span>GOBI MANCHURIAN</span> <span>145</span></li>
+          <li><span>KAJU FRY</span> <span>190</span></li>
+          <li><span>FRENCH FRIES</span> <span>105</span></li>
+          <li><span>CHILLI MUSHROOM</span> <span>195</span></li>
+          <li><span>PEPPER MUSHROOM</span> <span>195</span></li>
+          <li><span>ONION PAKODA</span> <span>110</span></li>
+          <li><span>VEG PAKODA</span> <span>145</span></li>
+          <li><span>VEG CRISPS</span> <span>160</span></li>
+          <li><span>CRISPY VEG</span> <span>180</span></li>
+          <li><span>PANNEER MAJESTIC</span> <span>200</span></li>
+        </ul>
+      </div>
+
+      <div class="column" id="startersNonVeg" style="display:none;">
+        <h3 class="category-title">CHICKEN STARTERS</h3>
+        <ul class="food-list">
+          <li><span>CHICKEN KANTAKI</span> <span>290</span></li>
+          <li><span>CHICKEN ROAST</span> <span>290</span></li>
+          <li><span>CHICKEN SIZZLER</span> <span>290</span></li>
+          <li><span>CHICKEN BURRANI</span> <span>295</span></li>
+          <li><span>CHICKEN PEPPER</span> <span>290</span></li>
+          <li><span>CHILLI CHICKEN</span> <span>290</span></li>
+          <li><span>CHICKEN MANCHURIA</span> <span>285</span></li>
+          <li><span>CHICKEN 65</span> <span>285</span></li>
+          <li><span>CHICKEN DRY</span> <span>295</span></li>
+          <li><span>CRISPY CHICKEN</span> <span>290</span></li>
+          <li><span>CHICKEN LOLLIPOP</span> <span>290</span></li>
+          <li><span>KAJU CHICKEN</span> <span>290</span></li>
+          <li><span>CHICKEN DRUMSTICK</span> <span>285</span></li>
+          <li><span>LEMON CHICKEN</span> <span>285</span></li>
+          <li><span>CHICKEN HONG KONG</span> <span>280</span></li>
+          <li><span>SESAME CHICKEN</span> <span>275</span></li>
+          <li><span>CHICKEN 555</span> <span>290</span></li>
+          <li><span>SPICY FRIED CHICKEN</span> <span>290</span></li>
+          <li><span>CHICKEN MAJESTIC</span> <span>290</span></li>
+          <li><span>KFC CHICKEN</span> <span>310</span></li>
+        </ul>
+
+        <h3 class="category-title">TANDOORI</h3>
+        <ul class="food-list">
+          <li><span>TANDOORI CHICKEN</span> <span>310</span></li>
+          <li><span>MURGH MALAI KEBAB</span> <span>315</span></li>
+          <li><span>CHICKEN TIKKA</span> <span>290</span></li>
+          <li><span>TANGDI KEBAB (1 PC)</span> <span>110</span></li>
+        </ul>
+
+        <h3 class="category-title">MUTTON</h3>
+        <ul class="food-list">
+          <li><span>MUTTON 65</span> <span>295</span></li>
+          <li><span>MUTTON MANCHURIAN</span> <span>295</span></li>
+          <li><span>MUTTON DRY BONELESS</span> <span>295</span></li>
+          <li><span>MUTTON WITH BONE</span> <span>275</span></li>
+          <li><span>MUTTON FRY</span> <span>290</span></li>
+          <li><span>MUTTON BONES FRY</span> <span>275</span></li>
+        </ul>
+
+        <h3 class="category-title">EGG</h3>
+        <ul class="food-list">
+          <li><span>BOILED EGG</span> <span>40</span></li>
+          <li><span>OMELETTE</span> <span>60</span></li>
+          <li><span>EGG HALF FRY</span> <span>45</span></li>
+          <li><span>HALF BOILED</span> <span>40</span></li>
+          <li><span>EGG BHURJI</span> <span>120</span></li>
+          <li><span>EGG CHILLI</span> <span>140</span></li>
+          <li><span>EGG CHIPS</span> <span>190</span></li>
+          <li><span>EGG ROAST</span> <span>60</span></li>
+          <li><span>EGG FRY</span> <span>130</span></li>
+          <li><span>EGG PAKODA</span> <span>110</span></li>
+        </ul>
+
+        <h3 class="category-title">FISH & PRAWNS</h3>
+        <ul class="food-list">
+          <li><span>APOLLO FISH</span> <span>285</span></li>
+          <li><span>FISH ROAST</span> <span>245</span></li>
+          <li><span>LOOSE PRAWNS</span> <span>285</span></li>
+          <li><span>CHILLI FISH</span> <span>285</span></li>
+          <li><span>FRIED PRAWNS</span> <span>285</span></li>
+          <li><span>CHILLI PRAWNS</span> <span>285</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Course -->
+  <div class="menu-section" id="maincourseSection">
+    <h2 id="maincourse">MAIN COURSE</h2>
+
+    <div class="category-buttons">
+      <div class="veg-nonveg">
+        <button onclick="showMainVeg()">🟢 VEG</button>
+        <button onclick="showMainNonVeg()">🔴 NON-VEG</button>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column" id="mainVeg">
+        <h3 class="category-title">VEG RICE</h3>
+        <ul class="food-list">
+          <li><span>VEG FRIED RICE</span> <span>160</span></li>
+          <li><span>VEG SCHEZWAN FRIED RICE</span> <span>195</span></li>
+          <li><span>JEERA RICE</span> <span>150</span></li>
+          <li><span>GHEE RICE</span> <span>160</span></li>
+          <li><span>CURD RICE</span> <span>140</span></li>
+          <li><span>MASALA RICE</span> <span>145</span></li>
+          <li><span>PALAK RICE</span> <span>185</span></li>
+          <li><span>VEG BIRYANI</span> <span>185</span></li>
+          <li><span>VEG PULAO</span> <span>185</span></li>
+        </ul>
+
+        <h3 class="category-title">VEG CURRY</h3>
+        <ul class="food-list">
+          <li><span>DAL FRY</span> <span>170</span></li>
+          <li><span>DAL TADKA</span> <span>130</span></li>
+          <li><span>BUTTER DAL FRY</span> <span>140</span></li>
+          <li><span>MIXED VEG CURRY</span> <span>180</span></li>
+          <li><span>KADAI KADAI</span> <span>215</span></li>
+          <li><span>KAJU PANEER</span> <span>280</span></li>
+          <li><span>PANEER BUTTER MASALA</span> <span>220</span></li>
+          <li><span>KAJU MASALA</span> <span>280</span></li>
+          <li><span>CHANA MASALA</span> <span>135</span></li>
+          <li><span>MALAI KOFTA</span> <span>225</span></li>
+          <li><span>TOMATO CURRY</span> <span>145</span></li>
+          <li><span>VEG KOLLAPURI</span> <span>220</span></li>
+          <li><span>MUSHROOM MASALA</span> <span>200</span></li>
+          <li><span>PANEER TIKKA MASALA</span> <span>240</span></li>
+          <li><span>KAJU KADAI</span> <span>215</span></li>
+          <li><span>KAJU PANEER</span> <span>280</span></li>
+          <li><span>VEG CHATPATA</span> <span>190</span></li>
+          <li><span>GOBI MASALA</span> <span>135</span></li>
+          <li><span>VEG KADAI</span> <span>195</span></li>
+          <li><span>VEG DAL FRY</span> <span>185</span></li>
+          <li><span>VEG CHATPATA</span> <span>190</span></li>
+        </ul>
+      </div>
+
+      <div class="column" id="mainNonVeg" style="display:none;">
+        <h3 class="category-title">BIRYANI</h3>
+        <ul class="food-list">
+          <li><span>CHICKEN TIKKA BIRYANI</span> <span>280</span></li>
+          <li><span>CHICKEN DUM BIRYANI</span> <span>250</span></li>
+          <li><span>SPL. CHICKEN BIRYANI</span> <span>260</span></li>
+          <li><span>CHICKEN FRY BIRYANI</span> <span>275</span></li>
+          <li><span>CHICKEN SINGLE BIRYANI (1 PC)</span> <span>180</span></li>
+          <li><span>CHICKEN FAMILY PACK</span> <span>650</span></li>
+          <li><span>CHICKEN BIRYANI</span> <span>250</span></li>
+          <li><span>MUTTON BIRYANI</span> <span>290</span></li>
+          <li><span>MUTTON BIRYANI HANDI</span> <span>330</span></li>
+          <li><span>SPL. MUTTON BIRYANI</span> <span>330</span></li>
+          <li><span>MUTTON FAMILY PACK</span> <span>720</span></li>
+          <li><span>PRAWNS BIRYANI</span> <span>300</span></li>
+          <li><span>FISH BIRYANI</span> <span>270</span></li>
+          <li><span>EGG BIRYANI</span> <span>185</span></li>
+        </ul>
+
+        <h3 class="category-title">NON-VEG FRIED RICE</h3>
+        <ul class="food-list">
+          <li><span>CHICKEN FRIED RICE</span> <span>195</span></li>
+          <li><span>MIXED FRIED RICE</span> <span>199</span></li>
+          <li><span>CHICKEN SCHEZWAN RICE</span> <span>220</span></li>
+          <li><span>EGG FRIED RICE</span> <span>170</span></li>
+          <li><span>PRAWNS FRIED RICE</span> <span>270</span></li>
+          <li><span>MUTTON FRIED RICE</span> <span>250</span></li>
+          <li><span>MIXED NON-VEG FRIED RICE</span> <span>250</span></li>
+        </ul>
+
+        <h3 class="category-title">SPRING ROLLS</h3>
+        <ul class="food-list">
+          <li><span>CHICKEN SPRING ROLLS</span> <span>255</span></li>
+          <li><span>EGG SPRING ROLLS</span> <span>175</span></li>
+          <li><span>VEG SPRING ROLLS</span> <span>195</span></li>
+        </ul>
+
+        <h3 class="category-title">EGG CURRY</h3>
+        <ul class="food-list">
+          <li><span>EGG CURRY</span> <span>150</span></li>
+          <li><span>EGG MASALA</span> <span>150</span></li>
+        </ul>
+
+        <h3 class="category-title">MUTTON CURRY</h3>
+        <ul class="food-list">
+          <li><span>TELANGANA MUTTON</span> <span>330</span></li>
+          <li><span>S.V. SPL. MUTTON</span> <span>340</span></li>
+          <li><span>BUTTER MUTTON</span> <span>320</span></li>
+          <li><span>KADAI MUTTON</span> <span>340</span></li>
+          <li><span>MUTTON CURRY</span> <span>320</span></li>
+          <li><span>MUTTON MASALA</span> <span>320</span></li>
+          <li><span>GINGER MUTTON</span> <span>320</span></li>
+          <li><span>ANDHRA MUTTON CURRY</span> <span>320</span></li>
+        </ul>
+
+<h3 class="category-title">CHICKEN CURRY</h3>
+<ul class="food-list two-price-list">
+  <li class="price-head">
+    <span>ITEM</span>
+    <span>HALF</span>
+    <span>FULL</span>
+  </li>
+  <li><span>TELANGANA CHICKEN</span> <span>  </span> <span>  </span></li>
+  <li><span>CHICKEN CURRY</span> <span>295</span> <span>445</span></li>
+  <li><span>CHICKEN KEEMA</span> <span>295</span> <span>445</span></li>
+  <li><span>S.V. SPL. CHICKEN</span> <span>310</span> <span>450</span></li>
+  <li><span>CHICKEN MASALA</span> <span>295</span> <span>445</span></li>
+  <li><span>BUTTER CHICKEN</span> <span>310</span> <span>460</span></li>
+  <li><span>KADAI CHICKEN</span> <span>300</span> <span>445</span></li>
+  <li><span>ANDHRA CHICKEN</span> <span>295</span> <span>445</span></li>
+  <li><span>GINGER CHICKEN</span> <span>290</span> <span>445</span></li>
+  <li><span>PUNJABI CHICKEN</span> <span>295</span> <span>445</span></li>
+  <li><span>AFGHANI CHICKEN</span> <span>-</span> <span>440</span></li>
+  <li><span>HANDI CHICKEN</span> <span>-</span> <span>445</span></li>
+      </div>
+    </div>
+  </div>
+
+  <!-- Indian Bread Section -->
+  <div class="menu-section" id="indianbreadSection">
+    <h2 id="indianbread">INDIAN BREAD</h2>
+    <ul class="food-list">
+      <li><span>TANDOORI ROTI</span> <span>22</span></li>
+      <li><span>BUTTER NAAN</span> <span>60</span></li>
+      <li><span>PLAIN NAAN</span> <span>45</span></li>
+      <li><span>BUTTER ROTI</span> <span>30</span></li>
+      <li><span>PULKA</span> <span>20</span></li>
+      <li><span>LACHHA PARATHA</span> <span>60</span></li>
+      <li><span>ALOO PARATHA</span> <span>60</span></li>
+    </ul>
+  </div>
+
+  <!-- Raita Section -->
+  <div class="menu-section" id="raithaSection">
+    <h2 id="raitha">RAITA</h2>
+    <ul class="food-list">
+      <li><span>ONION RAITA</span> <span>30</span></li>
+      <li><span>CURD CUP</span> <span>30</span></li>
+      <li><span>MIXED RAITA</span> <span>35</span></li>
+      <li><span>PUDINA CUP</span> <span>30</span></li>
+      <li><span>BUTTER MILK</span> <span>45</span></li>
+    </ul>
+  </div>
+
+  <!-- Cool Drinks -->
+  <div class="menu-section" id="cooldrinksSection">
+    <h2 id="cooldrinks">COOL DRINKS</h2>
+    <ul class="food-list">
+      <li><span>SOFT DRINKS</span> <span>25</span></li>
+      <li><span>MINERAL WATER</span> <span>25</span></li>
+      <li><span>RED BULL</span> <span>150</span></li>
+      <li><span>CLASSIC HELL</span> <span>85</span></li>
+      <li><span>SODA</span> <span>30</span></li>
+      <li><span>TILT RED</span> <span>300</span></li>
+      <li><span>GREEN MONK</span> <span>135</span></li>
+    </ul>
+  </div>
+
+</div>
+
+<a href="index.html" class="home-button">Home</a>
+
+<!-- Scroll To Top Button -->
+<button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+<script>
+  const scrollBtn = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+
+  function scrollToTop() {
+    document.getElementById("top").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function showStartersVeg() {
+    document.getElementById("startersVeg").style.display = "block";
+    document.getElementById("startersNonVeg").style.display = "none";
+  }
+
+  function showStartersNonVeg() {
+    document.getElementById("startersVeg").style.display = "none";
+    document.getElementById("startersNonVeg").style.display = "block";
+  }
+
+  function showMainVeg() {
+    document.getElementById("mainVeg").style.display = "block";
+    document.getElementById("mainNonVeg").style.display = "none";
+  }
+
+  function showMainNonVeg() {
+    document.getElementById("mainVeg").style.display = "none";
+    document.getElementById("mainNonVeg").style.display = "block";
+  }
+
+  function showSection(sectionId, element) {
+    document.querySelectorAll(".menu-section").forEach(sec => sec.style.display = "none");
+
+    const target = document.getElementById(sectionId);
+    if (target) target.style.display = "block";
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+    }
+  }
+
+  window.onload = function () {
+    const firstBtn = document.querySelector(".top-nav .image-btn");
+    if (firstBtn) firstBtn.click();
+  };
+</script>
+
+</body>
+</html>
